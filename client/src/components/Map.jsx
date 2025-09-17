@@ -119,7 +119,7 @@ const Map = () => {
 
         map.on('click', handleClick);
         return () => { map.off('click', handleClick); }
-    }, [addingEnabled]);
+    }, [addingEnabled, selectedIconType]);
 
     // Render all features
     useEffect(() => {

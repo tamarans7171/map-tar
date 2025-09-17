@@ -1,16 +1,149 @@
-/* App.css */
+body {
+  overflow: hidden;
+}
+
 .container {
   display: flex;
   height: 100vh;
 }
+
 .map-section {
   flex: 2;
-  /* מפה גדולה בצד שמאל */
 }
+
 .side-section {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 16px;
   padding: 16px;
+}
+
+.card,
+.objects-panel,
+.polygon-panel {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header,
+.polygon-panel h3,
+.objects-panel h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.card-body {
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background-color: #f9f9f9;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.card table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.card th,
+.card td {
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.card th {
+  background-color: #f9f9f9;
+  font-weight: 600;
+}
+
+.card tr:hover {
+  background-color: #f5f5f5;
+}
+
+.card button {
+  padding: 6px 12px;
+  margin: 4px 4px 4px 0;
+  background-color: #4f46e5;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.card button:hover,
+.polygon-panel button:hover,
+.objects-panel button:hover {
+  background-color: #3730a3;
+}
+
+.card .draft-count {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.polygon-panel .button-group,
+.objects-panel .button-group {
+  margin-bottom: 12px;
+}
+
+.polygon-panel button,
+.objects-panel button {
+  padding: 6px 14px;
+  margin-right: 8px;
+  background-color: #4f46e5;
+  color: #fff;
+  font-weight: 500;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.polygon-panel .draft-info,
+.objects-panel .draft-info {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.polygon-panel .instruction {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 8px;
+}
+
+.objects-panel select {
+  margin-top: 8px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  cursor: pointer;
+  background-color: #fff;
 }

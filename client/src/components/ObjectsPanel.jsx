@@ -28,31 +28,34 @@ const ObjectsPanel = () => {
     };
 
     return (
-        <div style={{ border: '1px solid #ccc', padding: '12px', marginBottom: '8px' }}>
+        <div className="objects-panel">
             <h3>Object Management</h3>
-            {!addingEnabled && !deletingEnabled && (
-                <>
-                    <button onClick={onAdd}>Add Object</button>
-                    <button onClick={onDelete} style={{ marginLeft: '8px' }}>Delete Object</button>
-                </>
-            )}
-            {addingEnabled && <button onClick={onStopAdding}>Stop Adding</button>}
-            {deletingEnabled && <button onClick={onStopDeleting}>Stop Deleting</button>}
+
+            <div className="button-group">
+                {!addingEnabled && !deletingEnabled && (
+                    <>
+                        <button onClick={onAdd}>Add Object</button>
+                        <button onClick={onDelete}>Delete Object</button>
+                    </>
+                )}
+                {addingEnabled && <button onClick={onStopAdding}>Stop Adding</button>}
+                {deletingEnabled && <button onClick={onStopDeleting}>Stop Deleting</button>}
+            </div>
 
             {draftCount > 0 && (
-                <div>
+                <div className="draft-info">
                     <p>Draft objects: {draftCount}</p>
                     <button onClick={onSave}>Save All ({draftCount})</button>
                 </div>
             )}
 
-            <select onChange={e => dispatch(setSelectedIconType(e.target.value))}
-                style={{ marginTop: '8px' }}>
+            <select onChange={e => dispatch(setSelectedIconType(e.target.value))}>
                 {icons && Object.keys(icons).map(type => (
                     <option key={type} value={type}>{type}</option>
                 ))}
             </select>
         </div>
+
     );
 };
 
