@@ -8,11 +8,29 @@ export const getPolygons = async () => {
 };
 
 export const createPolygon = async (Polygon) => {
-    delete Polygon.properties;
-    const response = await axios.post(API_URL, Polygon, { headers: { "Content-Type": "application/json" } });
+    const polygonCopy = JSON.parse(JSON.stringify(Polygon));
+
+    delete polygonCopy.properties;
+    const response = await axios.post(API_URL, polygonCopy, { headers: { "Content-Type": "application/json" } });
     return response.data;
 };
 
 export const deletePolygon = async (id) => {
+    await axios.delete(`${API_URL}/${id}`);
+};
+
+export const getObjects = async () => {
+    const response = await axios.get(API_URL);
+    return response.data;
+};
+export const createObject = async (Polygon) => {
+    const polygonCopy = JSON.parse(JSON.stringify(Polygon));
+
+    delete polygonCopy.properties;
+    const response = await axios.post(API_URL, polygonCopy, { headers: { "Content-Type": "application/json" } });
+    return response.data;
+};
+
+export const deleteObject = async (id) => {
     await axios.delete(`${API_URL}/${id}`);
 };
