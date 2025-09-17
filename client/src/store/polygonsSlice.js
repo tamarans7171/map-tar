@@ -47,8 +47,7 @@ const polygonsSlice = createSlice({
                 state.features = action.payload;
             })
             .addCase(saveDraftPolygon.fulfilled, (state, action) => {
-                state.features.push(action.payload); // Add saved polygon to features
-                // Optional: remove from draft if you didn’t clear it elsewhere
+                state.features = [...state.features, action.payload];
                 state.draftPolygons = state.draftPolygons.filter(
                     p => p.id !== action.payload.id
                 );

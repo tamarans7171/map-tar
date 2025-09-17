@@ -49,7 +49,10 @@ const objectsSlice = createSlice({
         state.features = action.payload;
       })
       .addCase(saveDraftObject.fulfilled, (state, action) => {
-        state.features.push(action.payload);
+        state.features = [...state.features, action.payload];
+        state.draftObjects = state.draftObjects.filter(
+          p => p.id !== action.payload.id
+        );
       })
       .addCase(removeObject.fulfilled, (state, action) => {
         state.features = state.features.filter(f => f.id !== action.payload);

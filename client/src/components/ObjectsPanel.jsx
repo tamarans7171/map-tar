@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { setAddingEnabled, setDeletingEnabled, clearDraftObjects, setSelectedIconType } from '../store/objectsSlice';
-import { createObject } from '../services/api';
+import { setAddingEnabled, setDeletingEnabled, clearDraftObjects, setSelectedIconType, saveDraftObject } from '../store/objectsSlice';
 import { icons } from './utils';
 
 const ObjectsPanel = () => {
@@ -21,7 +20,7 @@ const ObjectsPanel = () => {
 
     const onSave = async () => {
         for (const obj of draftObjects) {
-            await createObject(obj);
+            await dispatch(saveDraftObject(obj)).unwrap();
         }
         dispatch(clearDraftObjects());
         dispatch(setAddingEnabled(false));
