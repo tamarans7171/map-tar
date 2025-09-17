@@ -148,7 +148,7 @@ const Map = () => {
                 });
 
                 const marker = L.marker([lat, lng], { icon });
-                marker.feature = feature; // Attach feature for deletion
+                marker.feature = feature;
                 drawnItems.addLayer(marker);
             }
         });

@@ -1,4 +1,3 @@
-// store/index.js
 import { configureStore } from '@reduxjs/toolkit';
 import polygonsReducer from './polygonsSlice';
 import objectsReducer from './objectsSlice';

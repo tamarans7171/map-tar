@@ -51,14 +51,11 @@ const PolygonPanel = () => {
                 ) : deletingEnabled ? (
                     <button onClick={onStopDeleting}>Stop Deleting</button>
                 ) : null}
+                {draftCount > 0 && (
+                    <button onClick={onSave}>Save All ({draftCount})</button>
+                )}
             </div>
 
-            {draftCount > 0 && (
-                <div className="draft-info">
-                    <p>Draft polygons: {draftCount}</p>
-                    <button onClick={onSave}>Save All ({draftCount})</button>
-                </div>
-            )}
 
             {drawingEnabled && (
                 <p className="instruction">

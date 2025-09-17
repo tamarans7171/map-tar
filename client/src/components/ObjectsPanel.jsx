@@ -39,14 +39,11 @@ const ObjectsPanel = () => {
                 )}
                 {addingEnabled && <button onClick={onStopAdding}>Stop Adding</button>}
                 {deletingEnabled && <button onClick={onStopDeleting}>Stop Deleting</button>}
+                {draftCount > 0 && (
+                    <button onClick={onSave}>Save All ({draftCount})</button>
+                )}
             </div>
 
-            {draftCount > 0 && (
-                <div className="draft-info">
-                    <p>Draft objects: {draftCount}</p>
-                    <button onClick={onSave}>Save All ({draftCount})</button>
-                </div>
-            )}
 
             <select onChange={e => dispatch(setSelectedIconType(e.target.value))}>
                 {icons && Object.keys(icons).map(type => (

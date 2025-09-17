@@ -10,7 +10,7 @@ namespace Server.Models
         public string? Id { get; set; }
         public string Type { get; set; }
         public GeometryObject Geometry { get; set; }
-        public string? IconType { get; set; } // אופציונלי, בשביל Marker
+        public string? IconType { get; set; }
 
     }
 

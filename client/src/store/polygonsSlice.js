@@ -1,4 +1,3 @@
-// store/polygonsSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { getPolygons, createPolygon, deletePolygon } from '../services/api';
 

@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { getObjects, createObject, deleteObject } from '../services/api';
 
-// Async thunks
 export const fetchObjects = createAsyncThunk('objects/fetch', async () => {
   return await getObjects();
 });

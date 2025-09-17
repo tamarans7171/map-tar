@@ -101,15 +101,12 @@ th {
   background-color: #3730a3;
 }
 
-.card .draft-count {
-  margin-top: 8px;
-  font-size: 0.9rem;
-  color: #555;
-}
-
 .polygon-panel .button-group,
 .objects-panel .button-group {
   margin-bottom: 12px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
 }
 
 .polygon-panel button,
@@ -123,13 +120,6 @@ th {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.2s;
-}
-
-.polygon-panel .draft-info,
-.objects-panel .draft-info {
-  margin-top: 12px;
-  font-size: 0.95rem;
-  color: #555;
 }
 
 .polygon-panel .instruction {

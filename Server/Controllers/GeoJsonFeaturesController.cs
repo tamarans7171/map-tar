@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 using Server.Models;
 using Server.Services;
 
@@ -19,7 +18,6 @@ namespace Server.Controllers
         [HttpPost]
         public async Task<ActionResult<GeoJsonFeature>> CreateFeature([FromBody] GeoJsonFeature feature)
         {
-            // כאן תחלץ feature.Geometry.Coordinates ותשמור במונגו
             await _mongoService.CreateFeatureAsync(feature);
             return CreatedAtAction(nameof(CreateFeature), new { id = "newId" }, feature);
         }
