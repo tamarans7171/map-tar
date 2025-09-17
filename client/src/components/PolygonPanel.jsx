@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { clearDraftPolygons, saveDraftPolygon, setDeletingEnabled, setDrawingEnabled } from '../store/polygonsSlice';
-import { createPolygon } from '../services/api';
+
 const PolygonPanel = () => {
 
     const dispatch = useDispatch();

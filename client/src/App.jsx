@@ -3,8 +3,6 @@ import PolygonPanel from './components/PolygonPanel';
 import ObjectsPanel from './components/ObjectsPanel';
 import MapDataPanel from './components/MapDataPanel';
 import './App.css';
-import { useState } from 'react';
-import { createPolygon } from './services/api';
 
 const App = () => {
 
